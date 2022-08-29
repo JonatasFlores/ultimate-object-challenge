@@ -1,6 +1,6 @@
-import 'package:final_challenge/interface/activities_interface.dart';
+import 'package:final_challenge/interface/Tasks_interface.dart';
 
-import '../utils/allActivities.dart';
+import '../utils/allTasks.dart';
 
 enum TypeActivities {
   meeting,
@@ -10,8 +10,8 @@ enum TypeActivities {
   others,
 }
 
-class ActivitiesModel implements ActivitiesInterface {
-  ActivitiesModel({
+class TaskModel implements TaskInterface {
+  TaskModel({
     required this.title,
     required this.description,
     required TypeActivities,
@@ -47,6 +47,6 @@ class ActivitiesModel implements ActivitiesInterface {
 
   @override
   void showActivity() {
-    print(allActivities);
+    print(allTasks);
   }
 }

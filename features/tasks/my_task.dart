@@ -2,18 +2,19 @@
 //ONDE FICARÁ SALVO
 
 import 'package:final_challenge/interface/home_page_interface.dart';
-import 'package:final_challenge/utils/allActivities.dart';
+import 'package:final_challenge/utils/allTasks.dart';
 import 'package:final_challenge/utils/read.dart';
+import 'dart:io';
 
-class MyActivities implements PageInterface {
-  get message => null;
-
+class MyTask implements PageInterface {
   @override
   void init() {
-    if (allActivities.isEmpty) {
+    if (allTasks.isEmpty) {
       print("Nenhuma Atividade");
-      Read.readString(message: 'Deseja criar uma atividade nova? s/n');
-      if (message == "s") {}
+      final result = Read.readString(message: 'Want to add a task');
+      if (result == "s") {
+        print(("New Task"));
+      }
     }
   }
 }

@@ -1,6 +1,7 @@
-import 'package:final_challenge/features/activities/my_activities.dart';
+import 'package:final_challenge/features/tasks/my_task.dart';
 import 'package:final_challenge/interface/home_page_interface.dart';
 import 'package:final_challenge/utils/read.dart';
+import 'dart:io';
 
 class Home implements PageInterface {
   @override
@@ -15,7 +16,7 @@ class Home implements PageInterface {
 
     if (result == 1) {
       //MOSTRAR A LISTA DE ATIVIDADES
-      MyActivities().init();
+      MyTask().init();
     } else if (result == 2) {
       //CRIAR UMA ATIVIDADE
     } else if (result == 3) {

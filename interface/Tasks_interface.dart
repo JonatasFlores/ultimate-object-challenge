@@ -1,4 +1,4 @@
-abstract class ActivitiesInterface {
+abstract class TaskInterface {
   late String title; //TÍTULO
   late String startDate; //DATA DE INÍCIO
   late String completionDate; //DATA DE TÉRMINO
