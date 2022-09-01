@@ -42,6 +42,9 @@ class NewTask implements PageInterface {
       allTasks.add(meetingTask);
 
       print('Task Created');
+
+      Clean.screen();
+
       print('1. back to home page');
       print('2. see my tasks');
       print('3. Exit');
@@ -64,7 +67,7 @@ class NewTask implements PageInterface {
       final startDate = Read.readString(message: 'Task Start Date: ');
       final completionDate = Read.readString(message: 'Task completion date');
       final place = Read.readString(message: 'Place: ');
-
+      Clean.screen();
       final workTask = MeetTaskModel(
           title: title,
           description: description,
@@ -77,6 +80,9 @@ class NewTask implements PageInterface {
       allTasks.add(workTask);
 
       print('Task Created');
+
+      Clean.screen();
+
       print('1. back to home page');
       print('2. see my tasks');
       print('3. Exit');
@@ -100,7 +106,7 @@ class NewTask implements PageInterface {
       final place = Read.readString(message: 'Place: ');
       final travelCost =
           Read.readDouble(message: 'Enter the cost for this trip');
-
+      Clean.screen();
       final travelTask = TravelTaskModel(
           title: title,
           description: description,
@@ -113,6 +119,9 @@ class NewTask implements PageInterface {
       allTasks.add(travelTask);
 
       print('Task Created');
+
+      Clean.screen();
+
       print('1. back to home page');
       print('2. see my tasks');
       print('3. Exit');
@@ -134,7 +143,7 @@ class NewTask implements PageInterface {
       final startDate = Read.readString(message: 'Task Start Date: ');
       final completionDate = Read.readString(message: 'Task completion date');
       final place = Read.readString(message: 'Place: ');
-
+      Clean.screen();
       final otherTask = OtherTaskModel(
           title: title,
           description: description,
@@ -146,6 +155,9 @@ class NewTask implements PageInterface {
       allTasks.add(otherTask);
 
       print('Task Created');
+
+      Clean.screen();
+
       print('1. back to home page');
       print('2. see my tasks');
       print('3. Exit');
