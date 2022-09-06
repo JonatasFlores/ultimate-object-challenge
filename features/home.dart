@@ -4,8 +4,6 @@ import 'package:final_challenge/interface/home_page_interface.dart';
 import 'package:final_challenge/utils/read.dart';
 import 'dart:io';
 
-import 'package:final_challenge/utils/settings.dart';
-
 import '../utils/clean.dart';
 
 class Home implements PageInterface {
@@ -16,17 +14,14 @@ class Home implements PageInterface {
     print('Welcome to Activities');
     print('1. My Tasks');
     print('2. New Task');
-    print('3. config');
     print('0. LogOut');
 
     final result = Read.readInt(message: 'Select Option');
-
+    Clean.screen();
     if (result == 1) {
       MyTask().init();
     } else if (result == 2) {
       NewTask().init();
-    } else if (result == 3) {
-      Config().init();
     } else if (result == 0) {
       print('Thanks for using the task organizer');
     } else {

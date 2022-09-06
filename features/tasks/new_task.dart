@@ -23,7 +23,7 @@ class NewTask implements PageInterface {
     print('4.Others');
 
     final result = Read.readInt(message: 'Select Task Type');
-
+    Clean.screen();
     if (result == 1) {
       final title = Read.readString(message: 'What is the task title? ');
       final description = Read.readString(message: 'Task Description: ');
@@ -40,15 +40,13 @@ class NewTask implements PageInterface {
           finished: false);
       meetingTask.showActivity();
       allTasks.add(meetingTask);
-
       print('Task Created');
-
-      Clean.screen();
 
       print('1. back to home page');
       print('2. see my tasks');
       print('3. Exit');
       final response = Read.readInt(message: 'Select Option');
+      Clean.screen();
       if (response == 1) {
         Home().init();
       } else if (response == 2) {
@@ -58,9 +56,6 @@ class NewTask implements PageInterface {
       } else {
         print('ERROR 404');
       }
-
-      //
-
     } else if (result == 2) {
       final title = Read.readString(message: 'What is the task title? ');
       final description = Read.readString(message: 'Task Description: ');
@@ -78,15 +73,13 @@ class NewTask implements PageInterface {
 
       workTask.showActivity();
       allTasks.add(workTask);
-
       print('Task Created');
-
-      Clean.screen();
 
       print('1. back to home page');
       print('2. see my tasks');
       print('3. Exit');
       final response = Read.readInt(message: 'Select Option');
+      Clean.screen();
       if (response == 1) {
         Home().init();
       } else if (response == 2) {
@@ -96,8 +89,6 @@ class NewTask implements PageInterface {
       } else {
         print('ERROR 404');
       }
-      //
-
     } else if (result == 3) {
       final title = Read.readString(message: 'What is the task title? ');
       final description = Read.readString(message: 'Task Description: ');
@@ -117,15 +108,13 @@ class NewTask implements PageInterface {
           travelCost: travelCost);
       travelTask.showActivity();
       allTasks.add(travelTask);
-
       print('Task Created');
-
-      Clean.screen();
 
       print('1. back to home page');
       print('2. see my tasks');
       print('3. Exit');
       final response = Read.readInt(message: 'Select Option');
+      Clean.screen();
       if (response == 1) {
         Home().init();
       } else if (response == 2) {
@@ -135,8 +124,6 @@ class NewTask implements PageInterface {
       } else {
         print('ERROR 404');
       }
-
-      //
     } else if (result == 4) {
       final title = Read.readString(message: 'What is the task title? ');
       final description = Read.readString(message: 'Task Description: ');
@@ -153,15 +140,13 @@ class NewTask implements PageInterface {
           finished: false);
       otherTask.showActivity();
       allTasks.add(otherTask);
-
       print('Task Created');
-
-      Clean.screen();
 
       print('1. back to home page');
       print('2. see my tasks');
       print('3. Exit');
       final response = Read.readInt(message: 'Select Option');
+      Clean.screen();
       if (response == 1) {
         Home().init();
       } else if (response == 2) {
@@ -171,10 +156,6 @@ class NewTask implements PageInterface {
       } else {
         print('ERROR 404');
       }
-
-      //
-    } else {
-      print('ERROR 404');
     }
   }
 }

@@ -43,17 +43,61 @@ class MyTask implements PageInterface {
         }
       }
     }
-    Read.readString(message: "Click to return to home menu.");
+    print('1. Return to Menu');
+    print('2. End task ');
+    print('3. Delete task');
+    int option = Read.readInt(message: 'Select a option');
     Clean.screen();
-    Home().init();
+    if (option == 1) {
+      Home().init();
+    } else if (option == 2) {
+      finishTask();
+    } else if (option == 3) {
+      deleteTask();
+    }
+    Clean.screen();
+  }
+
+  void finishTask() {
+    for (int i = 0; i < allTasks.length; i++) {
+      final task = allTasks[i];
+      _showTitle(task, i + 1);
+    }
+    int taskIndex = Read.readInt(message: 'Select a task to complete:');
+    taskIndex--;
+    if (taskIndex < allTasks.length && taskIndex >= 0) {
+      allTasks[taskIndex].finish();
+    }
+    int option = Read.readInt(message: 'Select "0" to return Menu');
+    Clean.screen();
+    if (option == 0) {
+      Home().init();
+    }
+  }
+
+  void deleteTask() {
+    for (int i = 0; i < allTasks.length; i++) {
+      final task = allTasks[i];
+      _showTitle(task, i + 1);
+    }
+    int taskIndex = Read.readInt(message: 'Select a task to complete:');
+    taskIndex--;
+    if (taskIndex < allTasks.length && taskIndex >= 0) {
+      allTasks.removeAt(taskIndex);
+    }
+    int option = Read.readInt(message: 'Select "0" to return Menu');
+    Clean.screen();
+    if (option == 0) {
+      Home().init();
+    }
   }
 
   void _showTitle(TaskInterface task, int index) {
-    Clean.screen();
-    print('Código: $index');
-    print('Titulo: ${task.title}');
-    print('Descrição: ${task.description}');
-    print('Status: ${task.finished ? "| Finished |" : "| In process.. |"}');
+    print("----------");
+    print("Code: $index");
+    print("Title: ${task.title}");
+    print("Description: ${task.description}");
+    print("Status: ${task.finished ? "| X |" : "|   |"}");
   }
 
   void _meetInfo(MeetTaskModel task) {
